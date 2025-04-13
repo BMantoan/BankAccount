@@ -1,0 +1,13 @@
+public class TestBankAccount {
+    public static void main(String[] args) {
+        BankAccount acc1 = new BankAccount("Brett", "Mantoan", 101); //Account1 with their ID
+        acc1.deposit(500);
+        acc1.withdrawal(200);
+        acc1.accountSummary();
+
+        CheckingAccount acc2 = new CheckingAccount("Karen", "Ramirez", 102, 1.5);   //Account2 with their ID and interest rate
+        acc2.deposit(300);
+        acc2.processWithdrawal(350); // Overdraft scenario
+        acc2.displayAccount();
+    }
+}
