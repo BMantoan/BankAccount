@@ -1,0 +1,29 @@
+public class BankAccount {
+    private String firstName, lastName;
+    private int accountID;
+    private double balance = 0.0; // Balance starts at zero
+
+    // Constructor
+    public BankAccount(String firstName, String lastName, int accountID) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.accountID = accountID;
+    }
+
+    // Deposit money
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    // Withdraw money
+    public void withdrawal(double amount) {
+        if (amount <= balance) balance -= amount;
+        else System.out.println("Insufficient funds.");
+    }
+
+    // Getters
+    public double getBalance() { return balance; }
+    public void accountSummary() {
+        System.out.println(firstName + " " + lastName + " | ID: " + accountID + " | Balance: $" + balance);
+    }
+}
