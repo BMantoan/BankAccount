@@ -1,0 +1,24 @@
+public class CheckingAccount extends BankAccount {
+    private double interestRate;
+    private static final double OVERDRAFT_FEE = 30.0;
+
+    // Constructor
+    public CheckingAccount(String firstName, String lastName, int accountID, double interestRate) {
+        super(firstName, lastName, accountID);
+        this.interestRate = interestRate;
+    }
+
+    // Overdraft handling
+    public void processWithdrawal(double amount) {
+        if (amount > getBalance()) {
+            System.out.println("Overdraft! Fee of $30 applied.");
+        }
+        withdrawal(amount);
+    }
+
+    // Display account details
+    public void displayAccount() {
+        accountSummary();
+        System.out.println("Interest Rate: " + interestRate + "%");
+    }
+}
